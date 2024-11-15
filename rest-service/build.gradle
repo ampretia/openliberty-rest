@@ -1,0 +1,60 @@
+
+plugins {
+    id 'buildlogic.java-common-conventions'
+    id 'war'
+    id "io.openliberty.tools.gradle.Liberty" version "3.9.1"
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    providedCompile 'jakarta.platform:jakarta.jakartaee-api:10.0.0'
+    providedCompile 'org.eclipse.microprofile:microprofile:6.1'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.11.3'
+    testImplementation 'org.apache.httpcomponents.client5:httpclient5:5.4.1'
+
+    // // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    // implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.18.1'
+
+    // // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
+    // implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.18.1'
+
+    // // https://mvnrepository.com/artifact/com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider
+    // implementation group: 'com.fasterxml.jackson.jaxrs', name: 'jackson-jaxrs-json-provider', version: '2.18.1'
+
+    // // https://mvnrepository.com/artifact/com.fasterxml.jackson.jaxrs/jackson-jaxrs-base
+    // implementation group: 'com.fasterxml.jackson.jaxrs', name: 'jackson-jaxrs-base', version: '2.18.1'
+    
+    // // https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-module-jaxb-annotations
+    // implementation group: 'com.fasterxml.jackson.module', name: 'jackson-module-jaxb-annotations', version: '2.18.1'
+
+    // // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations
+    // implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.18.1'
+
+
+    implementation project(':utilities')
+
+}
+
+ext  {
+    liberty.server.var.'http.port' = '9080'
+    liberty.server.var.'https.port' = '9443'
+    liberty.server.var.'app.context.root' = 'rest-service'
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events 'passed', 'skipped', 'failed', 'standardOut'
+        exceptionFormat 'full'
+    }
+    systemProperty 'http.port', liberty.server.var.'http.port'
+    systemProperty 'context.root',  liberty.server.var.'app.context.root'
+}
+
+test.dependsOn 'libertyStart'
+clean.dependsOn 'libertyStop'
