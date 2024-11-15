@@ -1,4 +1,4 @@
-POST http://localhost:9080/nx01/api/stringprocess/convert HTTP/1.1
+POST http://localhost:9080/rest-service/api/stringprocess/convert HTTP/1.1
 content-type: application/json
 
 {
@@ -7,5 +7,5 @@ content-type: application/json
 
 ###
 
-GET http://localhost:9080/nx01/api/stringprocess/ping HTTP/1.1
+GET  http://localhost:9080/rest-service/api/stringprocess/ping HTTP/1.1
 content-type: application/json
