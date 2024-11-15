@@ -17,24 +17,8 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.11.3'
     testImplementation 'org.apache.httpcomponents.client5:httpclient5:5.4.1'
 
-    // // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
-    // implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.18.1'
-
-    // // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
-    // implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.18.1'
-
-    // // https://mvnrepository.com/artifact/com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider
-    // implementation group: 'com.fasterxml.jackson.jaxrs', name: 'jackson-jaxrs-json-provider', version: '2.18.1'
-
-    // // https://mvnrepository.com/artifact/com.fasterxml.jackson.jaxrs/jackson-jaxrs-base
-    // implementation group: 'com.fasterxml.jackson.jaxrs', name: 'jackson-jaxrs-base', version: '2.18.1'
-    
-    // // https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-module-jaxb-annotations
-    // implementation group: 'com.fasterxml.jackson.module', name: 'jackson-module-jaxb-annotations', version: '2.18.1'
-
-    // // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations
-    // implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.18.1'
-
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.jakarta.rs/jackson-jakarta-rs-json-provider
+    implementation group: 'com.fasterxml.jackson.jakarta.rs', name: 'jackson-jakarta-rs-json-provider', version: '2.18.1'
 
     implementation project(':utilities')
 

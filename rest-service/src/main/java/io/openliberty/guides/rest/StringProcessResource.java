@@ -19,7 +19,7 @@ public class StringProcessResource {
     @Produces(MediaType.APPLICATION_JSON)
     @POST
     public StringProcess convert(StringProcess process){
-       
+        
         // pass to the library to process
         return StringUtils.process(process);
 
